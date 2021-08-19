@@ -11,7 +11,6 @@
         >Flourite</a>
       </p>
       <textarea
-        ref="codeElement"
         v-model="code"
         @change="detectLanguage()"
         class="w-full min-h-40 p-4 my-4 font-code text-sm md:text-base ring-dark-400 bg-light-500 ring-0 focus:bg-light-300 dark:(bg-dark-400 focus:bg-dark-300)"
