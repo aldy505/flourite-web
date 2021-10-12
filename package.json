@@ -10,21 +10,21 @@
     "lint": "eslint --ext .vue,.js --fix --ignore-path .gitignore ."
   },
   "dependencies": {
-    "@fontsource/fira-code": "^4.5.0",
-    "@fontsource/mulish": "^4.5.0",
-    "flourite": "^1.1.0",
-    "vue": "^3.0.5"
+    "@fontsource/fira-code": "^4.5.1",
+    "@fontsource/mulish": "^4.5.1",
+    "flourite": "^1.2.0",
+    "vue": "^3.2.20"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^1.4.0",
-    "@vue/compiler-sfc": "^3.2.4",
-    "eslint": "^7.32.0",
-    "eslint-config-xo-space": "^0.29.0",
-    "eslint-plugin-vue": "^7.16.0",
-    "typescript": "^4.3.5",
-    "vite": "^2.5.0",
-    "vite-plugin-windicss": "^1.2.7",
-    "vue-tsc": "^0.3.0",
-    "windicss": "^3.1.7"
+    "@vitejs/plugin-vue": "^1.9.3",
+    "@vue/compiler-sfc": "^3.2.20",
+    "eslint": "^8.0.0",
+    "eslint-config-xo-space": "^0.30.0",
+    "eslint-plugin-vue": "^7.19.1",
+    "typescript": "^4.4.3",
+    "vite": "^2.6.7",
+    "vite-plugin-windicss": "^1.4.11",
+    "vue-tsc": "^0.28.3",
+    "windicss": "^3.1.9"
   }
 }

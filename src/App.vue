@@ -15,18 +15,36 @@
         @change="detectLanguage()"
         class="w-full min-h-40 p-4 my-4 font-code text-sm md:text-base ring-dark-400 bg-light-500 ring-0 focus:bg-light-300 dark:(bg-dark-400 focus:bg-dark-300)"
       />
-      <p
+      <div
         class="text-base py-2 text-center"
         v-if="language"
       >
-        Language: <strong>{{ language }}</strong>
-      </p>
-      <p
+        <p>Language: <strong>{{ language }}</strong></p>
+        <p
+          @click="displayStats = !displayStats"
+          class="hover:(font-bold opacity-100) opacity-60 transition duration-500 ease-in-out cursor-pointer"
+        >
+          {{ displayStats ? 'Hide' : 'Show' }} statistics
+        </p>
+        <div
+          v-show="displayStats"
+          :key="String(displayStats)"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-2 transition duration-500 ease-in-out"
+        >
+          <p
+            v-for="stat in statistics"
+            :key="stat[0]"
+          >
+            <strong>{{ stat[0] }}</strong>: {{ stat[1] }}
+          </p>
+        </div>
+      </div>
+      <div
         class="text-base py-2 text-center"
         v-else
       >
         Insert some code on the text area above first.
-      </p>
+      </div>
       <p class="text base py-4 text-center">
         Made with 😘 in Indonesia
       </p>
@@ -44,8 +62,8 @@ export default defineComponent({
     return {
       code: '',
       language: '',
-      codemirror: null,
-      cmInstance: null,
+      statistics: [['', 0]],
+      displayStats: false,
     };
   },
   watch: {
@@ -53,8 +71,9 @@ export default defineComponent({
   },
   methods: {
     detectLanguage() {
-      const generated = flourite(this.code);
-      this.language = generated as string;
+      const {language, statistics} = flourite(this.code);
+      this.language = language;
+      this.statistics = Object.entries(statistics);
     },
   },
 });
